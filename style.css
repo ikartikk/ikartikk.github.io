@@ -340,7 +340,7 @@ body {
 	max-width: 80%;
 	margin: auto;
 	margin-right: 10%;
-	text-align: center;
+	text-align: left;
 }
 
 .image{
@@ -352,6 +352,7 @@ body {
 	position: relative;
 	left: 100px;
 	top: 100px;
+	font-size: larger;	
 }
 
 .about__intro {
