@@ -13,7 +13,7 @@
   }
 
   /* ========================================
-     BLOB SPHERE — Wave-deformed dot sphere
+     BLOB SPHERE - Wave-deformed dot sphere
      Inspired by ILAB's BlobAnimation.
      3 sine waves deform a sphere, morphing
      between shapes as user scrolls.
@@ -44,7 +44,7 @@
       amp3: 50,     freq3: 0,     pha3: 0
     };
 
-    // Morph shapes — matching ILAB's 4 shapes
+    // Morph shapes - matching ILAB's 4 shapes
     var shapes = [
       { amp1: 76.923, freq1: 0.879, pha1: 0, amp2: 60, freq2: 0.165, pha2: 0, amp3: 50, freq3: 0, pha3: 0 },
       { amp1: 0, freq1: 0, pha1: 0, amp2: 0, freq2: 0, pha2: 0, amp3: 35, freq3: 10, pha3: 0 },
@@ -52,7 +52,7 @@
       { amp1: 34.066, freq1: 5.934, pha1: 0, amp2: 20.879, freq2: 6.154, pha2: 0, amp3: 50.549, freq3: 0, pha3: 0 }
     ];
 
-    // Section thresholds — which shape at which scroll position
+    // Section thresholds - which shape at which scroll position
     // We detect which section is in viewport and morph accordingly
     var currentShape = 0;
 
@@ -120,7 +120,7 @@
       mouseX += (mouseTargetX - mouseX) * 0.05;
       mouseY += (mouseTargetY - mouseY) * 0.05;
 
-      // Wave motion — continuously animate phase
+      // Wave motion - continuously animate phase
       motionPha1 += MOTION_SPEED_1 * 0.016;
       motionPha2 += MOTION_SPEED_2 * 0.016;
 
@@ -195,7 +195,7 @@
           var size = dotSize * p3d.scale;
 
           if (size > 0) {
-            ctx.globalAlpha = p3d.alpha;
+            ctx.globalAlpha = p3d.alpha * 0.65;
             ctx.fillRect(p3d.x, p3d.y, size, size);
           }
         }
