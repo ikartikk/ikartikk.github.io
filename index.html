@@ -1,227 +1,347 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Kartik Kumar</title>
-  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-
-<link href='https://fonts.googleapis.com/css?family=Muli:300|Raleway:300,700' rel='stylesheet' type='text/css'><link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
-<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
-
+  <title>Kartik Kumar — GenAI Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kartik Kumar — GenAI Engineer specializing in Machine Learning, Deep Learning, and AI Solutions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<header class="header container-fluid">
-  <div class="nav-toggle-wrapper">
-    <button class="nav-toggle-btn">
-					      <span class="line"></span>
-      					<span class="line"></span>
-					      <span class="line"></span>
-				    </button>
+
+  <!-- Dot Sphere Background Canvas -->
+  <canvas id="dot-sphere"></canvas>
+
+  <!-- Smooth scroll wrapper -->
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+
+      <!-- NAV -->
+      <header id="header" class="header">
+        <a href="#hero" class="header-logo">Kartik<span class="accent">.</span></a>
+        <nav class="header-nav" id="header-nav">
+          <a href="#about" class="nav-item">About</a>
+          <a href="#work" class="nav-item">Work</a>
+          <a href="#services" class="nav-item">Services</a>
+          <a href="#contact" class="nav-item">Contact</a>
+        </nav>
+        <div class="header-right">
+          <a href="./Kartik_resume.pdf" target="_blank" class="nav-cta">Resume</a>
+          <button class="burger" id="burger" aria-label="Menu">
+            <span></span><span></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- MOBILE NAV -->
+      <div class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-menu-nav">
+          <a href="#about" class="mobile-menu-link">About</a>
+          <a href="#work" class="mobile-menu-link">Work</a>
+          <a href="#services" class="mobile-menu-link">Services</a>
+          <a href="#contact" class="mobile-menu-link">Contact</a>
+          <a href="./Kartik_resume.pdf" target="_blank" class="mobile-menu-link">Resume</a>
+        </nav>
+      </div>
+
+      <!-- ============ HERO ============ -->
+      <section id="hero" class="section hero">
+        <div class="container hero-container">
+          <div class="hero-eyebrow">
+            <span class="line-accent"></span>
+            <span>GenAI Engineer</span>
+          </div>
+          <h1 class="hero-title">
+            <span class="title-line"><span class="word" data-reveal>Crafting</span> <span class="word" data-reveal>intelligent</span></span>
+            <span class="title-line"><span class="word" data-reveal>solutions</span> <span class="word italic" data-reveal>with</span> <span class="word" data-reveal>AI</span></span>
+          </h1>
+          <div class="hero-bottom">
+            <p class="hero-intro" data-reveal>
+              I'm Kartik Kumar — a GenAI Engineer at Tata Elxsi, building cutting-edge AI systems that push the boundaries of what's possible.
+            </p>
+            <a href="#work" class="scroll-cta" data-reveal>
+              <span class="scroll-cta-text">Selected Projects</span>
+              <span class="scroll-cta-arrow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="5 12 12 19 19 12"/></svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ ABOUT ============ -->
+      <section id="about" class="section about">
+        <div class="container">
+          <div class="section-label" data-reveal>
+            <span class="label-num">01</span>
+            <span class="label-line"></span>
+            <span class="label-text">About</span>
+          </div>
+          <div class="about-grid">
+            <div class="about-left">
+              <h2 class="big-text" data-reveal-lines>
+                A laboratory dedicated to AI — with attention to detail and a passion for innovation.
+              </h2>
+            </div>
+            <div class="about-right">
+              <p class="body-text" data-reveal>
+                Since starting my journey in data science, I've been driven by a single mission: to create AI-driven solutions that empower people to make data-driven decisions.
+              </p>
+              <p class="body-text" data-reveal>
+                I specialize in Machine Learning, Deep Learning, and Generative AI — building systems that learn, adapt, and deliver real impact. Currently engineering AI solutions at Tata Elxsi.
+              </p>
+              <p class="body-text" data-reveal>
+                Every project is a challenge I can't resist. And yes — I'm a devoted Marvel fan.
+              </p>
+              <div class="about-stats" data-reveal>
+                <div class="stat">
+                  <span class="stat-number">8+</span>
+                  <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-number">5+</span>
+                  <span class="stat-label">ML Domains</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-number">AI</span>
+                  <span class="stat-label">First Approach</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ WORK ============ -->
+      <section id="work" class="section work">
+        <div class="container">
+          <div class="section-label" data-reveal>
+            <span class="label-num">02</span>
+            <span class="label-line"></span>
+            <span class="label-text">Selected Work</span>
+          </div>
+
+          <div class="work-list">
+
+            <a href="https://github.com/ikartikk/Spotify-Hit-Prediction" target="_blank" class="work-item" data-reveal>
+              <div class="work-item-img">
+                <img src="./spotify.jpeg" alt="Spotify Hit Prediction" loading="lazy">
+              </div>
+              <div class="work-item-info">
+                <span class="work-item-tag">Prediction</span>
+                <h3 class="work-item-title">Spotify Hit Prediction</h3>
+                <p class="work-item-desc">ML model predicting hit songs using audio features and metadata analysis.</p>
+              </div>
+              <div class="work-item-arrow">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
+            </a>
+
+            <a href="https://github.com/ikartikk/Drugs-Recommendation-System" target="_blank" class="work-item" data-reveal>
+              <div class="work-item-img">
+                <img src="./capsule.jpg" alt="Drug Recommendation System" loading="lazy">
+              </div>
+              <div class="work-item-info">
+                <span class="work-item-tag">Analytics</span>
+                <h3 class="work-item-title">Drug Recommendation System</h3>
+                <p class="work-item-desc">Intelligent recommendation engine for pharmaceutical suggestions using patient data.</p>
+              </div>
+              <div class="work-item-arrow">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
+            </a>
+
+            <a href="https://github.com/ikartikk/Bank-Note-Authentication" target="_blank" class="work-item" data-reveal>
+              <div class="work-item-img">
+                <img src="./money.jpg" alt="Bank Note Authentication" loading="lazy">
+              </div>
+              <div class="work-item-info">
+                <span class="work-item-tag">Prediction</span>
+                <h3 class="work-item-title">Bank Note Authentication</h3>
+                <p class="work-item-desc">Classification model detecting counterfeit bank notes using image-derived features.</p>
+              </div>
+              <div class="work-item-arrow">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
+            </a>
+
+            <a href="https://github.com/ikartikk/Flight-Price-Prediction" target="_blank" class="work-item" data-reveal>
+              <div class="work-item-img">
+                <img src="./airport.jpg" alt="Flight Price Prediction" loading="lazy">
+              </div>
+              <div class="work-item-info">
+                <span class="work-item-tag">Prediction</span>
+                <h3 class="work-item-title">Flight Price Prediction</h3>
+                <p class="work-item-desc">Regression model forecasting airline ticket prices based on route and timing data.</p>
+              </div>
+              <div class="work-item-arrow">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
+            </a>
+
+            <a href="https://github.com/ikartikk/Advance-attendance-system" target="_blank" class="work-item" data-reveal>
+              <div class="work-item-img">
+                <img src="./bar.jpg" alt="Advance Attendance System" loading="lazy">
+              </div>
+              <div class="work-item-info">
+                <span class="work-item-tag">AI</span>
+                <h3 class="work-item-title">Advance Attendance System</h3>
+                <p class="work-item-desc">Face recognition powered attendance tracking with real-time detection capabilities.</p>
+              </div>
+              <div class="work-item-arrow">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
+            </a>
+
+            <a href="https://github.com/ikartikk/A.I-Surveillance-System" target="_blank" class="work-item" data-reveal>
+              <div class="work-item-img">
+                <img src="./cctv.jpg" alt="AI Surveillance System" loading="lazy">
+              </div>
+              <div class="work-item-info">
+                <span class="work-item-tag">AI</span>
+                <h3 class="work-item-title">AI Surveillance System</h3>
+                <p class="work-item-desc">Computer vision system for intelligent monitoring and anomaly detection.</p>
+              </div>
+              <div class="work-item-arrow">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
+            </a>
+
+            <a href="https://github.com/ikartikk/Car-Price-Prediction" target="_blank" class="work-item" data-reveal>
+              <div class="work-item-img">
+                <img src="./car.jpg" alt="Car Price Prediction" loading="lazy">
+              </div>
+              <div class="work-item-info">
+                <span class="work-item-tag">Prediction</span>
+                <h3 class="work-item-title">Car Price Prediction</h3>
+                <p class="work-item-desc">Price estimation model using vehicle specifications and market data analysis.</p>
+              </div>
+              <div class="work-item-arrow">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
+            </a>
+
+            <a href="https://github.com/ikartikk/Black-Friday-EDA" target="_blank" class="work-item" data-reveal>
+              <div class="work-item-img">
+                <img src="./black.jpg" alt="Black Friday Sales" loading="lazy">
+              </div>
+              <div class="work-item-info">
+                <span class="work-item-tag">EDA</span>
+                <h3 class="work-item-title">Black Friday Sales</h3>
+                <p class="work-item-desc">Exploratory analysis uncovering consumer behavior patterns and purchasing trends.</p>
+              </div>
+              <div class="work-item-arrow">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SERVICES ============ -->
+      <section id="services" class="section services">
+        <div class="container">
+          <div class="section-label" data-reveal>
+            <span class="label-num">03</span>
+            <span class="label-line"></span>
+            <span class="label-text">Expertise</span>
+          </div>
+          <div class="services-grid">
+            <div class="service-col" data-reveal>
+              <h3 class="service-title">Machine Learning</h3>
+              <ul class="service-list">
+                <li>Supervised Learning</li>
+                <li>Unsupervised Learning</li>
+                <li>Feature Engineering</li>
+                <li>Model Optimization</li>
+                <li>Ensemble Methods</li>
+              </ul>
+            </div>
+            <div class="service-col" data-reveal>
+              <h3 class="service-title">Deep Learning</h3>
+              <ul class="service-list">
+                <li>Neural Networks</li>
+                <li>Computer Vision</li>
+                <li>NLP</li>
+                <li>Transfer Learning</li>
+                <li>Model Architecture</li>
+              </ul>
+            </div>
+            <div class="service-col" data-reveal>
+              <h3 class="service-title">Generative AI</h3>
+              <ul class="service-list">
+                <li>LLM Applications</li>
+                <li>Prompt Engineering</li>
+                <li>RAG Systems</li>
+                <li>AI Agents</li>
+                <li>Fine-tuning</li>
+              </ul>
+            </div>
+            <div class="service-col" data-reveal>
+              <h3 class="service-title">Data Science</h3>
+              <ul class="service-list">
+                <li>EDA</li>
+                <li>Statistical Analysis</li>
+                <li>Data Visualization</li>
+                <li>Python / SQL</li>
+                <li>Pipeline Design</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CONTACT ============ -->
+      <section id="contact" class="section contact">
+        <div class="container">
+          <div class="contact-top">
+            <div class="section-label" data-reveal>
+              <span class="label-num">04</span>
+              <span class="label-line"></span>
+              <span class="label-text">Contact</span>
+            </div>
+            <h2 class="contact-heading" data-reveal-lines>
+              Start a project
+            </h2>
+            <p class="body-text contact-sub" data-reveal>
+              Have an idea or a challenge? Let's talk about how AI can solve it.
+            </p>
+          </div>
+          <div class="contact-grid">
+            <div class="contact-col" data-reveal>
+              <span class="contact-label">Email</span>
+              <a href="mailto:kartik.capoor@gmail.com" class="contact-link">kartik.capoor@gmail.com</a>
+            </div>
+            <div class="contact-col" data-reveal>
+              <span class="contact-label">Phone</span>
+              <a href="tel:+917837376807" class="contact-link">+91 783 737 6807</a>
+            </div>
+            <div class="contact-col" data-reveal>
+              <span class="contact-label">Social</span>
+              <div class="contact-socials">
+                <a href="https://github.com/ikartikk" target="_blank" class="contact-link">GitHub</a>
+                <a href="https://www.instagram.com/kkayy.kk/" target="_blank" class="contact-link">Instagram</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ FOOTER ============ -->
+      <footer class="footer">
+        <div class="container footer-inner">
+          <span class="footer-copy">&copy; 2024 Kartik Kumar</span>
+          <span class="footer-tagline">GenAI Engineer — Tata Elxsi</span>
+        </div>
+      </footer>
+
+    </div>
   </div>
-  <nav class="header__nav">
-    <ul class="nav">
-      <li class="header__nav__item"><a href="#about" data-ref="about">about</a></li>
-      <li class="header__nav__item"><a href="#portfolio" data-ref="portfolio">work</a></li>
-      <li class="header__nav__item"><a href="#contact" data-ref="contact">contact</a></li>
-      <li class="header__nav__item"><a href="./Kartik_resume.pdf" data-ref="contact">resume</a></li>
-    </ul>
-  </nav>
-  <ul class="header__social-btns">
-    <li>
-      <a class="fa fa-instagram fa-2x" href="https://www.instagram.com/kkayy.kk/"></a>
-    </li>
-    <li>
-      <a class="fa fa-github fa-2x" href="https://github.com/ikartikk" target="_blank"> </a>
-    </li>
-    <li>
-      <a class="fa fa-envelope fa-2x" href="mailto:kartik.capoor@gmail.com" target="_blank"></a>
-    </li>
-    <li>
-      <a class="fa fa-phone fa-2x" href="Tel:+917837376807" target="_blank"></a>
-    </li>
-  </ul>
-</header>
 
-<main>
-
-  <section id="about" class="main-section">
-    <div class="wrapper">
-      <div class="image">
-        <img src="./Image.png" alt="Memoji">
-      </div>
-      <div class="wrapper-content">
-        <p class="about__intro">
-          Hi, I'm Kartik Kumar, a GenAI Engineer passionate about Data Science, Machine Learning, and Deep Learning.
-          <br> I work at Tata Elxsi, building cutting-edge AI solutions.
-          <br> By day, I engineer AI systems; by night, I continue learning and exploring advanced AI techniques.
-          <br> I strive to create AI-driven solutions that empower people to make data-driven decisions.
-          <br> And yes, I'm a devoted Marvel fan! <br> 
-        </p>
-    
-      <a href="#portfolio" class="global-button rotated scroll"> see my work </a>
-    </div>
-    </div>
-  </section>
-
-  <section id="portfolio" class="container main-section">
-    <div class="filters row js-dis">
-      <h4 class="filters__title"> <i class="fa fa-tags"></i> </h4>
-      <ul class="filters__list">
-        <li class="filters__label is-active"> all </li>
-      </ul>
-    </div>
-
-    <div class="portfolio__project-wrapper row">
-
-      <div class="portfolio__project col-xs-12 col-sm-6 col-lg-4 text-center" data-cat="fcc">
-        <a href="https://github.com/ikartikk/Spotify-Hit-Prediction" target="_blank" title="Spotify hit prediction">
-          <div class="portfolio__project__preview">
-            <img src="./spotify.jpeg" alt="Spotify hit prediction">
-          </div>
-          <div class="portfolio__project__description">
-            <div class="info-wrapper">
-              <h3 class="portfolio__project__name">Spotify Hit Prediction</h3>
-              <p class="portfolio__project__category"> #PREDICTION</p>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="portfolio__project col-xs-12 col-sm-6 col-lg-4" data-cat="fcc">
-        <a href="https://github.com/ikartikk/Drugs-Recommendation-System" target="_blank" title="Drug Recommendation">
-          <div class="portfolio__project__preview">
-            <img src="./capsule.jpg" alt="Drug Recommendation System">
-          </div>
-          <div class="portfolio__project__description">
-            <div class="info-wrapper">
-              <h3 class="portfolio__project__name">Drug Recommendation System</h3>
-              <p class="portfolio__project__category">#ANALYTICS</p>
-            </div>
-          </div>
-        </a>
-      </div>
-
-
-      <div class="portfolio__project col-xs-12 col-sm-6 col-lg-4" data-cat="fcc">
-        <a href="https://github.com/ikartikk/Bank-Note-Authentication" target="_blank" title="Bank Note Authentication">
-          <div class="portfolio__project__preview">
-            <img src="./money.jpg" alt="Bank Note Authentication">
-          </div>
-          <div class="portfolio__project__description">
-            <div class="info-wrapper">
-              <h3 class="portfolio__project__name">Bank Note Authentication</h3>
-              <p class="portfolio__project__category">#PREDICTION</p>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="portfolio__project col-xs-12 col-sm-6 col-lg-4" data-cat="fcc">
-        <a href="https://github.com/ikartikk/Flight-Price-Prediction" title="Flight Price Prediction">
-          <div class="portfolio__project__preview">
-            <img src="./airport.jpg" alt="Flight Price Prediction">
-          </div>
-          <div class="portfolio__project__description">
-            <div class="info-wrapper">
-              <h3 class="portfolio__project__name">Flight Price Predictionr</h3>
-              <p class="portfolio__project__category"> #PREDICTION</p>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="portfolio__project col-xs-12 col-sm-6 col-lg-4" data-cat="personal">
-        <a href="https://github.com/ikartikk/Advance-attendance-system" title="Advance Attendance System">
-          <div class="portfolio__project__preview">
-            <img src="./bar.jpg" alt="Advance Attendance System">
-          </div>
-          <div class="portfolio__project__description">
-            <div class="info-wrapper">
-              <h3 class="portfolio__project__name">Advance Attendance System</h3>
-              <p class="portfolio__project__category">#AI</p>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="portfolio__project col-xs-12 col-sm-6 col-lg-4" data-cat="personal">
-        <a href="https://github.com/ikartikk/A.I-Surveillance-System" target="_blank" title="AI Surveillance System">
-          <div class="portfolio__project__preview">
-            <img src="./cctv.jpg" alt="AI Surveillance System">
-          </div>
-          <div class="portfolio__project__description">
-            <div class="info-wrapper">
-              <h3 class="portfolio__project__name">AI Surveillance System </h3>
-              <p class="portfolio__project__category">#Personal Project</p>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="portfolio__project col-xs-12 col-sm-6 col-lg-4" data-cat="personal">
-        <a href="https://github.com/ikartikk/Car-Price-Prediction" title="Car Price ">
-          <div class="portfolio__project__preview">
-            <img src="./car.jpg" alt="Car Price Prediction">
-          </div>
-          <div class="portfolio__project__description">
-            <div class="info-wrapper">
-              <h3 class="portfolio__project__name">Car Price Prediction</h3>
-              <p class="portfolio__project__category">#PREDICTION</p>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="portfolio__project col-xs-12 col-sm-6 col-lg-4" data-cat="personal">
-        <a href="https://github.com/ikartikk/Black-Friday-EDA" title="Black Friday">
-          <div class="portfolio__project__preview">
-            <img src="./black.jpg" alt="Black friday">
-          </div>
-          <div class="portfolio__project__description">
-            <div class="info-wrapper">
-              <h3 class="portfolio__project__name">Black Friday Sales</h3>
-              <p class="portfolio__project__category">#EDA</p>
-            </div>
-          </div>
-        </a>
-      </div>
-
-    </div>
-
-  </section>
-
-</main>
-
-<footer class="container">
-  <section id="contact" class="row main-section ">
-    <div class="col-xs-12 col-md-5 contact-form-wrapper">
-      <h2 class="heading"> drop me a line </h2>
-      <form class="contact-form">
-        <div class="contact-form-el">
-          <input type="text" id="name" class="input" required></input>
-          <label for="name"> your name </label>
-        </div>
-        <div class="contact-form-el">
-          <input type="email" id="email" class="input" required></input>
-          <label for="email"> your e-mail </label>
-        </div>
-        <div class="contact-form-el">
-          <textarea rows="7 " id="message" class="input" required></textarea>
-          <label for="message"> your message </label>
-        </div>
-        <div class="text-right">
-          <button type="submit" class="global-button"> send </button>
-        </div>
-      </form>
-    </div>
-    <div id="map" class="col-xs-12 col-md-7 "></div>
-  </section>
-</footer>
-
-<!--<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>-->
-
-  <script  src="./script.js"></script>
-
+  <script src="./script.js"></script>
 </body>
 </html>
