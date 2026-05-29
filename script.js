@@ -254,22 +254,22 @@
             morphTo(2);
             targetDistance = 1000;
             targetPerspective = 1;
-            targetSize = 220;
-            targetDotSize = window.innerWidth > 480 ? 1.021 : 0.6;
+            targetSize = 250;
+            targetDotSize = window.innerWidth > 480 ? 1.5 : 1;
             setTheme('dark');
-          } else if (sectionId === 'services') {
-            morphTo(2);
+          } else if (sectionId === 'expertise') {
+            morphTo(3);
             targetDistance = 1000;
             targetPerspective = 1;
             targetSize = 220;
             targetDotSize = window.innerWidth > 480 ? 1.021 : 0.6;
             setTheme('light');
           } else if (sectionId === 'contact') {
-            morphTo(3);
+            morphTo(0);
             targetDistance = 1000;
             targetPerspective = 1;
-            targetSize = 220;
-            targetDotSize = window.innerWidth > 480 ? 1.021 : 0.6;
+            targetSize = 200;
+            targetDotSize = window.innerWidth > 480 ? 1 : 0.8;
             setTheme('dark');
           }
           break;
