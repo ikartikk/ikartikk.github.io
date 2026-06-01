@@ -5,6 +5,7 @@
 
   function init() {
     initBlobSphere();
+    initCursor();
     initHeader();
     initMobileMenu();
     initScrollReveal();
@@ -71,10 +72,12 @@
     var cosA, sinA;
     var matrix = [[1,0,0],[0,1,0],[0,0,1]];
 
-    // Mouse interaction
+    // Mouse interaction — strong direct rotation
     var mouseX = 0, mouseY = 0;
     var mouseTargetX = 0, mouseTargetY = 0;
-    var mouseInfluence = 0;
+    var prevMouseX = 0, prevMouseY = 0;
+    var mouseDeltaX = 0, mouseDeltaY = 0;
+    var mouseSpeed = 0;
 
     // Wave motion phase accumulators
     var motionPha1 = 0, motionPha2 = 0;
@@ -116,21 +119,40 @@
       blobSize += (targetSize - blobSize) * 0.05;
       dotSize += (targetDotSize - dotSize) * 0.05;
 
-      // Mouse smoothing
-      mouseX += (mouseTargetX - mouseX) * 0.05;
-      mouseY += (mouseTargetY - mouseY) * 0.05;
+      // Mouse smoothing with momentum
+      var prevSmoothedX = mouseX;
+      var prevSmoothedY = mouseY;
+      mouseX += (mouseTargetX - mouseX) * 0.08;
+      mouseY += (mouseTargetY - mouseY) * 0.08;
+
+      // Compute mouse velocity for rotation drive
+      mouseDeltaX = mouseX - prevSmoothedX;
+      mouseDeltaY = mouseY - prevSmoothedY;
+      mouseSpeed = Math.sqrt(mouseDeltaX * mouseDeltaX + mouseDeltaY * mouseDeltaY);
 
       // Wave motion - continuously animate phase
       motionPha1 += MOTION_SPEED_1 * 0.016;
       motionPha2 += MOTION_SPEED_2 * 0.016;
 
-      // Rotation
-      var O = Math.sqrt(rotA * rotA + rotB * rotB);
-      var n = rotA / O || 0.0001;
-      var p = -rotB / O || 0.0001;
+      // Mouse-driven rotation: cursor movement directly spins the blob
+      // rotA/rotB define the rotation axis, angle is the rotation amount per frame
+      // When mouse moves right, blob rotates clockwise around Y
+      // When mouse moves down, blob rotates around X
+      var mouseSensitivity = 0.8;
+      rotA = mouseDeltaY * 100 * mouseSensitivity + 0.5;
+      rotB = mouseDeltaX * 100 * mouseSensitivity + 0.5;
 
-      sinA = Math.sin(angle);
-      cosA = Math.cos(angle);
+      // Clamp to avoid zero-length axis
+      var O = Math.sqrt(rotA * rotA + rotB * rotB);
+      if (O < 0.001) O = 0.001;
+      var n = rotA / O;
+      var p = -rotB / O;
+
+      // Dynamic angle: faster mouse = faster rotation, with baseline auto-rotation
+      var dynamicAngle = Math.min(mouseSpeed * 0.008, 0.06) + 0.002;
+
+      sinA = Math.sin(dynamicAngle);
+      cosA = Math.cos(dynamicAngle);
 
       var rot = [
         [n*n + p*p*cosA,   n*p*(1-cosA),   p*sinA],
@@ -146,12 +168,6 @@
         }
       }
       matrix = newMatrix;
-
-      // Add mouse influence to rotation
-      var mouseRotY = mouseX * 0.0003;
-      var mouseRotX = mouseY * 0.0003;
-      rotA = 5 + mouseY * 2;
-      rotB = 5 + mouseX * 2;
 
       // Interpolate dot color
       dotColor.r += (dotColorTarget.r - dotColor.r) * 0.05;
@@ -288,6 +304,63 @@
 
     resize();
     render();
+  }
+
+  /* ========================================
+     CUSTOM CURSOR
+     ======================================== */
+  function initCursor() {
+    if (window.innerWidth < 768) return;
+
+    var dot = document.getElementById('cursor-dot');
+    var circle = document.getElementById('cursor-circle');
+    if (!dot || !circle) return;
+
+    var mx = 0, my = 0;
+    var cx = 0, cy = 0;
+    var dx = 0, dy = 0;
+
+    document.addEventListener('mousemove', function(e) {
+      mx = e.clientX;
+      my = e.clientY;
+    });
+
+    function animate() {
+      // Dot follows exactly
+      dot.style.left = mx + 'px';
+      dot.style.top = my + 'px';
+
+      // Circle follows with lag
+      cx += (mx - cx) * 0.12;
+      cy += (my - cy) * 0.12;
+      circle.style.left = cx + 'px';
+      circle.style.top = cy + 'px';
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    // Grow circle on hoverable elements
+    var hoverables = document.querySelectorAll('a, button, .work-item');
+    hoverables.forEach(function(el) {
+      el.addEventListener('mouseenter', function() {
+        circle.style.width = '60px';
+        circle.style.height = '60px';
+        circle.style.borderColor = 'rgba(255,255,255,0.8)';
+      });
+      el.addEventListener('mouseleave', function() {
+        circle.style.width = '44px';
+        circle.style.height = '44px';
+        circle.style.borderColor = 'rgba(255,255,255,0.5)';
+      });
+    });
+
+    // Hide default cursor
+    document.body.style.cursor = 'none';
+    hoverables.forEach(function(el) {
+      el.style.cursor = 'none';
+    });
   }
 
   /* ========================================
