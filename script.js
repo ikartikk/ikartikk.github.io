@@ -4,6 +4,11 @@
   document.addEventListener('DOMContentLoaded', init);
 
   function init() {
+    // Page fade-in
+    requestAnimationFrame(function() {
+      document.body.classList.remove('is-loading');
+    });
+
     initBlobSphere();
     initCursor();
     initHeader();
